@@ -73,4 +73,10 @@ class IrisClassifier(TrainingMixin, Model, ReportingMixin):
             ytickables=self.encodings.keys()
         )
         
-    def save
+    def save(self) -> None:
+        filename = f"{self.artifact_dir}/model.joblib"
+        dump(self.model, filename)
+        print(f"Saved {filename}.")
+        
+    def predict(self, X: "pd.DataFrame") -> int:
+        return self.model.predict(X)
