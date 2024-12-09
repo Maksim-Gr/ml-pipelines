@@ -29,8 +29,8 @@ class Config:
         """
         
         self.items = OmegaConf.merge(
-            OmegaConf.load(self.config_dir / "common.yaml")
-            OmegaConf.load(self.config_dir / "datasets.yaml")
+            OmegaConf.load(self.config_dir / "common.yaml"),
+            OmegaConf.load(self.config_dir / "datasets.yaml"),
             OmegaConf.load(self.config_dir / f"projects/{self.project}.yaml")
         )
         
