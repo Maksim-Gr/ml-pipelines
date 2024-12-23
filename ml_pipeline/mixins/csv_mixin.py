@@ -28,7 +28,7 @@ class CSVMixin:
         if suffix: 
             suffix = f"_{suffix}"
         self.df.to_csv(
-            f"{artefact_dir}/{self.name}{suffix}.csv"
+            f"{artefact_dir}/{self.name}{suffix}.csv",
             float_format="%.6f",
             index=False
         )
